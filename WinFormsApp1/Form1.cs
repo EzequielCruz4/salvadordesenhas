@@ -15,7 +15,6 @@ namespace WinFormsApp1
             usuarioDAO = new UsuarioDAO();
         }
 
-        // BOTÃO SALVAR
         private void bsalvar_Click(object sender, EventArgs e)
         {
             string nome = textBox1.Text;
@@ -27,21 +26,17 @@ namespace WinFormsApp1
                 return;
             }
 
-            // Cria um objeto Usuario com os dados da tela
             Usuario usuario = new Usuario
             {
                 Nome = nome,
                 Endereco = endereco
             };
 
-            // Usa o DAO para inserir no banco
             usuarioDAO.Inserir(usuario);
 
-            // Atualiza a tabela
             CarregarTabela();
         }
 
-        // BOTÃO ENVIAR
         private void button1_Click(object sender, EventArgs e)
         {
             CarregarTabela();
@@ -57,3 +52,4 @@ namespace WinFormsApp1
         }
     }
 }
+
